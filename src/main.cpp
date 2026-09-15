@@ -177,14 +177,16 @@ public:
 
 int main() {
     try {
-        ModelConfig config("model/tinyllama-1.1b/config.json");
+        ModelConfig config("models/TinyLlama-1.1B-Chat-v1.0/config.json");
         GPUModelLoader gpu_loader(
-            "model/tinyllama-1.1b/model.safetensors", config
+            "models/TinyLlama-1.1B-Chat-v1.0/model.safetensors", config
         );
         GPUModelWeights gpu_weights = gpu_loader.Load();
   
         // Tokenizer
-        Tokenizer tokenizer("model/tinyllama-1.1b/tokenizer.model");
+        Tokenizer tokenizer(
+            "models/TinyLlama-1.1B-Chat-v1.0/tokenizer.model"
+        );  
 
         // GPU Transformer
         GPUTransformer transformer(config, gpu_weights);
