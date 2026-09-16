@@ -37,7 +37,7 @@ public:
     std::vector<float> Logits(int seq_len) const;  
 
     // Return the token with the highest logit.
-    int ArgmaxToken() const;
+    int ArgmaxToken(int seq_len) const;  
 
     const int Position() { return position_; }  
 
