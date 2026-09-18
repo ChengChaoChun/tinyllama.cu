@@ -98,3 +98,12 @@ target_link_libraries(gpu-logits-test
 PRIVATE
     tinyllama-core  
 )    
+
+add_executable(benchmark
+    test/performance/benchmark.cpp
+)
+
+target_link_libraries(benchmark   
+PRIVATE
+    tinyllama-core  
+)   
