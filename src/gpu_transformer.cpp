@@ -69,26 +69,7 @@ void GPUTransformer::Synchronize() const {
 std::vector<float> GPUTransformer::Logits(int seq_len) const {
     return backend_.FetchLogits(seq_len);
 }
-
-int GPUTransformer::ArgmaxToken(int seq_len) const {
-    const auto values = backend_.FetchLogits(seq_len);
   
-    if (values.empty()) {
-        throw std::runtime_error(
-            "GPUTransformer::ArgmaxToken: logits are empty."
-        );
-    }
-
-    const int vocab_size = config_.vocab_size;
-
-    const float* last_logits =
-        values.data()
-        + static_cast<std::size_t>(seq_len - 1) * vocab_size;
-
-    return static_cast<int>(
-        std::max_element(
-            last_logits,
-            last_logits + vocab_size
-        ) - last_logits
-    );
-}
+int GPUTransformer::ArgmaxToken(int seq_len) {
+    return backend_.ArgMaxToken(seq_len);
+}   

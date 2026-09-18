@@ -1,5 +1,6 @@
 #include "kernel.cuh"
 #include <cmath> // -INFINITY
+#include <cfloat>
 
 namespace {
 
@@ -491,6 +492,89 @@ void SwiGlu(bf16* gate, const bf16* up, const int intermediate_size) {
     }
 }
 
+__device__
+__forceinline__ void WarpReduceArgMax(float& max_value, int& max_index) {
+    constexpr unsigned MASK = 0xffffffff;
+
+    for (int offset = 16; offset > 0; offset >>= 1) {
+        float other_value = __shfl_xor_sync(MASK, max_value, offset);
+        int other_index = __shfl_xor_sync(MASK, max_index, offset);
+
+        if (other_value > max_value) {
+            max_value = other_value;
+            max_index = other_index;
+        }
+    }
+}
+
+__device__
+__forceinline__ void BlockReduceArgMax(float& max_value, int& max_index) {
+    constexpr int WARP_SIZE = 32;
+    constexpr int BLOCK_SIZE = 256;
+    constexpr int WARPS_PER_BLOCK = BLOCK_SIZE / WARP_SIZE;
+
+    __shared__ float warp_max[WARPS_PER_BLOCK];
+    __shared__ int warp_index[WARPS_PER_BLOCK];
+
+    const int lane_id = threadIdx.x & (WARP_SIZE - 1);
+    const int warp_id = threadIdx.x >> 5;
+
+    WarpReduceArgMax(max_value, max_index);
+
+    if (lane_id == 0) {
+        warp_max[warp_id] = max_value;
+        warp_index[warp_id] = max_index;
+    }
+
+    __syncthreads();
+
+    if (warp_id == 0) {
+        if (lane_id < WARPS_PER_BLOCK) {
+            max_value = warp_max[lane_id];
+            max_index = warp_index[lane_id];
+        } else {
+            max_value = -FLT_MAX;
+            max_index = -1;
+        }
+
+        WarpReduceArgMax(max_value, max_index);
+    }
+}
+
+__global__
+void ArgMaxKernel(const float* last_logits, int vocab_size, int* result) {
+    constexpr int BLOCK_SIZE = 256;
+    
+    // ------------------------------------------------------------------------
+    // Each thread finds its local maximum.
+    // vocab_size = 32000, BLOCK_SIZE = 256
+    // 32000 / 256 = 125
+    // Therefore each thread processes 125 logits.
+    // ------------------------------------------------------------------------
+    float max_value = -FLT_MAX;
+    int max_index = -1;
+
+    for (int index = threadIdx.x; 
+        index < vocab_size; 
+        index += BLOCK_SIZE
+    ) {
+        const float value = last_logits[index];
+
+        if (value > max_value) {
+            max_value = value;
+            max_index = index;
+        }
+    }
+
+    // Reduce all 256 threads to one maximum.
+    BlockReduceArgMax(max_value, max_index);
+
+    // Thread 0 writes the final token index.
+    if (threadIdx.x == 0) {
+        *result = max_index;
+    }
+}
+
 } // namespace
 
 void LaunchTokenEmbedding(
@@ -668,4 +752,20 @@ void LaunchSwiGlu(
     const dim3 grid(seq_len);
 
     SwiGlu<<<grid, block, 0, stream>>>(gate, up, intermediate_size);
+}
+
+void LaunchArgMaxKernel(
+    const float* last_logits,
+    int vocab_size,
+    int* result,
+    cudaStream_t stream
+) {
+    constexpr int BLOCK_SIZE = 256;
+
+    const dim3 block(BLOCK_SIZE);
+    const dim3 grid(1);  
+
+    ArgMaxKernel<<<grid, block, 0, stream>>>(
+        last_logits, vocab_size, result
+    );
 }

@@ -474,8 +474,8 @@ void GPUBackend::GemmStridedBatchedBf16(
 }
 
 void GPUBackend::Synchronize() const {
-    CHECK_CUDA(cudaDeviceSynchronize());
-}
+    CHECK_CUDA(cudaDeviceSynchronize());  
+}  
 
 std::vector<float> GPUBackend::FetchLogits(int seq_len) const {
     const int vocab_size = config_.vocab_size;
@@ -501,4 +501,37 @@ std::vector<float> GPUBackend::FetchLogits(int seq_len) const {
     }
 
     return host;
+}
+
+int GPUBackend::ArgMaxToken(int seq_len) {
+    const int vocab_size = config_.vocab_size;
+
+    const float* last_logits =
+        run_state_.logits.data()
+        + static_cast<std::size_t>(seq_len - 1) * vocab_size;
+
+    LaunchArgMaxKernel(
+        last_logits,
+        vocab_size,
+        run_state_.argmax_token_.data(),
+        stream_
+    );
+
+    int token_id;
+
+    cudaError_t status = cudaMemcpy(
+        &token_id,
+        run_state_.argmax_token_.data(),
+        sizeof(int),
+        cudaMemcpyDeviceToHost
+    );
+
+    if (status != cudaSuccess) {
+        throw std::runtime_error(
+            std::string("ArgMax token cudaMemcpy failed: ")
+            + cudaGetErrorString(status)
+        );
+    }
+
+    return token_id;
 }

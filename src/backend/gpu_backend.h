@@ -58,6 +58,8 @@ public:
  
     std::vector<float> FetchLogits(int seq_len) const;
 
+    int ArgMaxToken(int seq_len);
+
 private:  
     void AttentionScore(int layer, int query_len, int kv_seq_len);
     void AttentionSoftmax(

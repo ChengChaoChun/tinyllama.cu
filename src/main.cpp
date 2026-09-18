@@ -150,7 +150,6 @@ int main() {
 
             // Prefill
             transformer.Prefill(tokens);
-            transformer.Synchronize();
 
             // First generated token
             int next_token = transformer.ArgmaxToken(prompt_len);
@@ -182,9 +181,8 @@ int main() {
 
                 generated_tokens.push_back(next_token);
 
-                // Feed generated token back into model
+                // Feed generated token back into model  
                 transformer.Decode(next_token);
-                transformer.Synchronize();
 
                 next_token = transformer.ArgmaxToken(1);
             }
