@@ -34,7 +34,9 @@ public:
         k_cache(static_cast<size_t>(num_layers) * max_seq_len *
                 (num_kv_heads * (hidden_size / num_heads))),
         v_cache(static_cast<size_t>(num_layers) * max_seq_len *
-                    (num_kv_heads * (hidden_size / num_heads)))
+                    (num_kv_heads * (hidden_size / num_heads))),
+        
+        argmax_token_(1)
     {}    
 
     GPURunState(const GPURunState&) = delete;
@@ -72,4 +74,5 @@ public:
     DeviceBuffer<bf16> hb, hb2; // mlp [seq_len * intermediate_size]
     DeviceBuffer<float> logits;
     DeviceBuffer<bf16> k_cache, v_cache;
+    DeviceBuffer<int> argmax_token_;
 };

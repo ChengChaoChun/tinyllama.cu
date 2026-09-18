@@ -80,3 +80,10 @@ void LaunchSwiGlu(
     int intermediate_size,
     cudaStream_t stream  
 ); 
+
+void LaunchArgMaxKernel(
+    const float* last_logits,
+    int vocab_size,
+    int* result,
+    cudaStream_t stream
+);
