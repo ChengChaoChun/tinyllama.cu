@@ -5,6 +5,7 @@
 
 #include "model_config.h"
 #include "tokenizer.h"
+#include "chat_template.h"
 
 #include "gpu_model_loader.h"
 #include "gpu_transformer.h"
@@ -96,16 +97,23 @@ int main() {
             "models/TinyLlama-1.1B-Chat-v1.0/tokenizer.model"
         );
 
+        ChatTemplate chat_template(tokenizer);
+
         // GPU Transformer
         GPUTransformer transformer(config, gpu_weights);
 
-        std::cout
-            << "============================================\n"
-            << " TinyLlama CUDA Inference Engine\n"
-            << " Type 'exit' to quit.\n"
-            << "============================================\n\n";
+        std::cout<<R"(
+            ┌┬┐┬┌┐┌┬ ┬┬  ┬  ┌─┐┌┬┐┌─┐ ┌─┐┬ ┬
+             │ ││││└┬┘│  │  ├─┤│││├─┤ │  │ │
+             ┴ ┴┘└┘ ┴ ┴─┘┴─┘┴ ┴┴ ┴┴ ┴o└─┘└─┘
 
-        constexpr int max_new_tokens = 100;
+                Welcome to tinyllama.cu
+
+                  Type 'exit' to quit.
+        )";
+        std::cout << "\n";  
+
+        constexpr int max_new_tokens = 200;
         constexpr int eos_token_id = 2;
 
         std::string prompt;
@@ -127,7 +135,6 @@ int main() {
                 continue;
             }
 
-
             // ------------------------------------------------
             // Reset previous conversation state
             //
@@ -137,8 +144,12 @@ int main() {
             transformer.Reset();
 
             // Tokenize
-            std::vector<int> tokens =
-                tokenizer.encode(prompt, true, false);
+            std::vector<std::pair<std::string, std::string>> messages = {
+                { "system", "You are a helpful assistant." },
+                { "user", prompt }  
+            };
+
+            std::vector<int> tokens = chat_template.Apply(messages);
 
             if (tokens.empty()) {
                 std::cout << '\n';
@@ -146,7 +157,6 @@ int main() {
             }
 
             const int prompt_len = static_cast<int>(tokens.size());
-
 
             // Prefill
             transformer.Prefill(tokens);
@@ -158,9 +168,6 @@ int main() {
             Utf8StreamDecoder stream_decoder;
 
             std::cout << '\n';
-  
-            std::vector<int> generated_tokens;
-            generated_tokens.reserve(max_new_tokens);
 
             for (int step = 0; step < max_new_tokens; ++step) {
                 if (next_token == eos_token_id) break;
@@ -179,9 +186,9 @@ int main() {
 
                 stream_decoder.print_bytes(token_text);
 
-                generated_tokens.push_back(next_token);
+                tokens.push_back(next_token);
 
-                // Feed generated token back into model  
+                // Feed generated token back into model    
                 transformer.Decode(next_token);
 
                 next_token = transformer.ArgmaxToken(1);
