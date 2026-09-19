@@ -3,9 +3,9 @@
 <p align="center">
   <img src="assets/logo.png" width="400">
   <br>
-  <h3 align="center">A Lightweight C++/CUDA Inference Engine for TinyLlama-1.1B Built from Scratch</h3>
+  <p align="center">A Lightweight C++/CUDA Inference Engine for TinyLlama-1.1B Built from Scratch</p>
 </p>  
-
+  
 ## Overview
 `tinyllama.cu` implements the core Transformer inference pipeline for TinyLlama-1.1B-Chat-v1.0, with both CPU and NVIDIA GPU backends.
   
@@ -73,7 +73,60 @@ Start the inference engine after building:
 ./build/tinyllama-cu
 ```
 
-The inference engine provides an interactive command-line interface. Enter a prompt when prompted to start text generation.
+## Demo
+Example interactive session:
+
+```text
+            ┌┬┐┬┌┐┌┬ ┬┬  ┬  ┌─┐┌┬┐┌─┐ ┌─┐┬ ┬
+             │ ││││└┬┘│  │  ├─┤│││├─┤ │  │ │
+             ┴ ┴┘└┘ ┴ ┴─┘┴─┘┴ ┴┴ ┴┴ ┴o└─┘└─┘
+
+                Welcome to tinyllama.cu
+
+                  Type 'exit' to quit.
+
+> 你好
+
+您好。
+
+我是一个帮助的助手。
+
+> exit
+Bye!
+```
+> **Note:** TinyLlama-1.1B is a relatively small language model, so generated responses may occasionally be incoherent or inaccurate.  
+
+## Performance
+
+Benchmark results on an NVIDIA RTX 2080 Ti (11 GB).
+
+### Test Configuration
+
+| Parameter | Value |
+|---|---|
+| Model | TinyLlama-1.1B-Chat-v1.0 |
+| Backend | CUDA |
+| Prompt Length | 157 tokens |
+| Max New Tokens | 200 |
+| Warmup Runs | 5 |
+| Benchmark Runs | 10 |
+
+### Benchmark Prompt
+```text
+[system]
+You are a helpful assistant.
+
+[user]
+Imagine you are an engineer living on a Mars colony in the year 2147. One night, you receive a transmission from Earth with a timestamp indicating that it was sent 137 years ago. The message contains only one sentence: "Do not trust the ship arriving tomorrow." Explain what this message could mean, then turn your reasoning into a science-fiction story. The story should contain at least three unexpected twists, but every twist must be logically consistent with information revealed earlier. End the story with a surprising but believable explanation of who sent the original message and why.
+```
+### Results
+| Metric           |           Result |
+| ---------------- | ---------------: |
+| Prompt Length    |       157 tokens |
+| Generated Tokens |   200 tokens/run |
+| Prefill Latency  |        74.446 ms |
+| Decode Latency   |   5.459 ms/token |
+| Token Throughput | 183.183 tokens/s |
 
 ## Validation
 The inference results are verified against PyTorch for numerical correctness and autoregressive generation.
