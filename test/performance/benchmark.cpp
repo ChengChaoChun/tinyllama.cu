@@ -7,13 +7,14 @@
 
 #include "model_config.h"
 #include "tokenizer.h"
+#include "chat_template.h"
 
 #include "gpu_model_loader.h"
 #include "gpu_transformer.h"
 
 
 // Benchmark Configuration
-constexpr int kMaxNewTokens = 100;
+constexpr int kMaxNewTokens = 200;
 
 // Warmup 次數
 // 用來讓 CUDA / cuBLAS 等初始化完成，避免第一次執行影響結果。
@@ -99,10 +100,12 @@ int main() {
         Tokenizer tokenizer(
             "models/TinyLlama-1.1B-Chat-v1.0/tokenizer.model"
         );
+        ChatTemplate chat_template(tokenizer);
 
         GPUTransformer transformer(config, gpu_weights);
 
-        const std::string prompt =
+        // Tokenize
+        const std::string prompt = 
         "Imagine you are an engineer living on a Mars colony in the year 2147. "
         "One night, you receive a transmission from Earth with a timestamp indicating "
         "that it was sent 137 years ago. The message contains only one sentence: "
@@ -111,10 +114,14 @@ int main() {
         "The story should contain at least three unexpected twists, but every twist must be "
         "logically consistent with information revealed earlier. "
         "End the story with a surprising but believable explanation of who sent the original "
-        "message and why.";    
+        "message and why.";
 
-        // Tokenize
-        std::vector<int> tokens = tokenizer.encode(prompt, true, false);
+        std::vector<std::pair<std::string, std::string>> messages = {
+            { "system", "You are a helpful assistant." },
+            { "user", prompt }  
+        };
+
+        std::vector<int> tokens = chat_template.Apply(messages);
 
         if (tokens.empty()) {
             throw std::runtime_error(
@@ -123,6 +130,18 @@ int main() {
         }
 
         const int prompt_len = static_cast<int>(tokens.size());
+
+        std::cout 
+            << "\nBenchmark Prompt\n"
+            << "--------------------------------------------\n";
+
+        for (const auto& [role, content] : messages) {
+            std::cout << "[" << role << "]\n";
+            std::cout << content << "\n\n";
+        }
+
+        std::cout
+            << "--------------------------------------------\n\n";
 
         std::cout
             << "============================================\n"
