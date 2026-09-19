@@ -103,10 +103,15 @@ int main() {
         GPUTransformer transformer(config, gpu_weights);
 
         const std::string prompt =
-            "請詳細說明在 CUDA C++ 中實現高效能 GEMM "
-            "(General Matrix Multiplication) 的核心優化技巧，"
-            "包括 Shared Memory Tiling、Thread Coarsening "
-            "與 Memory Coalescing：";
+        "Imagine you are an engineer living on a Mars colony in the year 2147. "
+        "One night, you receive a transmission from Earth with a timestamp indicating "
+        "that it was sent 137 years ago. The message contains only one sentence: "
+        "\"Do not trust the ship arriving tomorrow.\" "
+        "Explain what this message could mean, then turn your reasoning into a science-fiction story. "
+        "The story should contain at least three unexpected twists, but every twist must be "
+        "logically consistent with information revealed earlier. "
+        "End the story with a surprising but believable explanation of who sent the original "
+        "message and why.";    
 
         // Tokenize
         std::vector<int> tokens = tokenizer.encode(prompt, true, false);
