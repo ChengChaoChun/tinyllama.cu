@@ -30,6 +30,7 @@ find_package(CUDAToolkit REQUIRED)
   
 add_library(tinyllama-core STATIC
     src/tokenizer.cpp
+    src/chat_template.cpp
     src/safetensor_reader.cpp
 
     src/cpu_model_loader.cpp
@@ -97,4 +98,4 @@ add_executable(gpu-logits-test
 target_link_libraries(gpu-logits-test  
 PRIVATE
     tinyllama-core  
-)    
+)  
