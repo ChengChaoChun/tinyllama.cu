@@ -97,6 +97,40 @@ def compute_metrics(
         f"{cpp_argmax.reshape(-1)[-1].item()}"
     )
 
+    # Only print Top-5 when argmax differs
+    if ref_argmax.flatten()[-1].item() != cpp_argmax.flatten()[-1].item():
+        ref_flat = ref.reshape(-1)
+        cpp_flat = cpp.reshape(-1)
+
+        ref_top5 = torch.topk(ref_flat, k=5)
+        cpp_top5 = torch.topk(cpp_flat, k=5)
+
+        print("\n  Top-5 PyTorch:")
+        for rank, (token_id, logit) in enumerate(
+            zip(
+                ref_top5.indices.tolist(),
+                ref_top5.values.tolist(),
+            ),
+            start=1,
+        ):
+            print(
+                f"    {rank}. token {token_id:5d} : "
+                f"{logit:.6f}"
+            )
+
+        print("\n  Top-5 C++:")
+        for rank, (token_id, logit) in enumerate(
+            zip(
+                cpp_top5.indices.tolist(),
+                cpp_top5.values.tolist(),
+            ),
+            start=1,
+        ):
+            print(
+                f"    {rank}. token {token_id:5d} : "
+                f"{logit:.6f}"
+            )
+
 
 def main():
     # Get prompt
@@ -132,16 +166,30 @@ def main():
 
     model.eval()
 
-    # Tokenize prompt
-    input_ids = tokenizer.encode(
-        prompt,
+    # Tokenize prompt with chat template
+    messages = [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant.",
+        },
+        {
+            "role": "user",
+            "content": prompt,
+        },
+    ]
+
+    encoded = tokenizer.apply_chat_template(
+        messages,
+        tokenize=True,
+        add_generation_prompt=True,
         return_tensors="pt",
-        add_special_tokens=True,
-    ).to(device)
+    )
+
+    input_ids = encoded["input_ids"].to(device)
 
     prompt_len = input_ids.shape[1]
 
-    print(f"Prompt length: {prompt_len} tokens")
+    print(f"Chat Template prompt length: {prompt_len} tokens")
 
     # Prefill verification
     cpp_prefill_path = os.path.join(
@@ -232,6 +280,9 @@ def main():
 
     # ========================================================================
     # Decode Argmax Statistics
+    #
+    # Count how many decode steps have the same argmax token between
+    # PyTorch and C++.
     # ========================================================================
     decode_match_count = 0
     decode_total_count = 0
@@ -335,4 +386,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main())  

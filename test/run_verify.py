@@ -6,12 +6,7 @@ DUMP_DIR = os.path.join(SCRIPT_DIR, "dumps")
 
 os.makedirs(DUMP_DIR, exist_ok=True)  
 
-PROMPT = (
-    "請詳細說明在 CUDA C++ 中實現高效能 GEMM "
-    "(General Matrix Multiplication) 的核心優化技巧，"
-    "包括 Shared Memory Tiling、Thread Coarsening "
-    "與 Memory Coalescing："
-)  
+PROMPT = ("You discover a bank where people can deposit and withdraw time instead of money. You have 37 years in your account, but someone has just withdrawn 6 minutes from your childhood. What do you do?")
 
 subprocess.run(
     [

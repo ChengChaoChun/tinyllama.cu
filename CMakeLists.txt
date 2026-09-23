@@ -99,3 +99,12 @@ target_link_libraries(gpu-logits-test
 PRIVATE
     tinyllama-core  
 )  
+
+add_executable(gpu-chat-logits-test
+    test/chat_template/gpu_chat_logits_test.cpp  
+)
+
+target_link_libraries(gpu-chat-logits-test    
+PRIVATE
+    tinyllama-core  
+)  
