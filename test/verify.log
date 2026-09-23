@@ -1,0 +1,1078 @@
+Prompt length: 47 tokens
+
+Generated Result:
+You discover a bank where people can deposit and withdraw time instead of money. You have 37 years in your account, but someone has just withdrawn 6 minutes from your childhood. What do you do?
+
+1. You go to the bank and deposit the money back into your account.
+
+2. You call the police and report the theft.
+
+3. You go to the bank and deposit the money back into your account.
+
+4. You call the police and report the theft.
+
+5. You go to the bank and deposit the money back into your account.
+
+6. You call the police and report the theft.
+
+
+C++ inference completed.
+Generated tokens: 100
+Logits and token IDs saved to test/dumps/
+Target Dump Directory: /root/tinyllama.cu/test/dumps
+Prompt: You discover a bank where people can deposit and withdraw time instead of money. You have 37 years in your account, but someone has just withdrawn 6 minutes from your childhood. What do you do?
+
+Loading PyTorch model and tokenizer...
+PyTorch device: cuda
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 11629.79it/s]
+Prompt length: 47 tokens
+
+Running PyTorch Prefill...
+
+--- Prefill Stage (Last Token Logits) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.145137
+Mean Absolute Error : 0.023782
+Cosine Similarity   : 0.99998522
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+Running PyTorch Decode Alignment (Step-by-Step Force Feeding)...
+
+--- Decode Step 0 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.256804
+Mean Absolute Error : 0.044693
+Cosine Similarity   : 0.99990445
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 1 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.130336
+Mean Absolute Error : 0.022588
+Cosine Similarity   : 0.99996567
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29896
+C++ Argmax Token    : 29896
+
+--- Decode Step 2 (Input Token ID: 29896) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.171978
+Mean Absolute Error : 0.023501
+Cosine Similarity   : 0.99998546
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 3 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.105315
+Mean Absolute Error : 0.017744
+Cosine Similarity   : 0.99999094
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 887
+C++ Argmax Token    : 887
+
+--- Decode Step 4 (Input Token ID: 887) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.130050
+Mean Absolute Error : 0.020014
+Cosine Similarity   : 0.99998814
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 748
+C++ Argmax Token    : 748
+
+--- Decode Step 5 (Input Token ID: 748) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.134735
+Mean Absolute Error : 0.022825
+Cosine Similarity   : 0.99998319
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 304
+C++ Argmax Token    : 304
+
+--- Decode Step 6 (Input Token ID: 304) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.127082
+Mean Absolute Error : 0.020598
+Cosine Similarity   : 0.99998879
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 7 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.116917
+Mean Absolute Error : 0.020577
+Cosine Similarity   : 0.99998927
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 9124
+C++ Argmax Token    : 9124
+
+--- Decode Step 8 (Input Token ID: 9124) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.121540
+Mean Absolute Error : 0.022327
+Cosine Similarity   : 0.99998599
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 322
+C++ Argmax Token    : 322
+
+--- Decode Step 9 (Input Token ID: 322) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.112894
+Mean Absolute Error : 0.020083
+Cosine Similarity   : 0.99999028
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 19754
+C++ Argmax Token    : 19754
+
+--- Decode Step 10 (Input Token ID: 19754) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.123168
+Mean Absolute Error : 0.020282
+Cosine Similarity   : 0.99996650
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 277
+C++ Argmax Token    : 277
+
+--- Decode Step 11 (Input Token ID: 277) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.153656
+Mean Absolute Error : 0.021935
+Cosine Similarity   : 0.99998689
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 12 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.130020
+Mean Absolute Error : 0.021705
+Cosine Similarity   : 0.99998677
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 6909
+C++ Argmax Token    : 6909
+
+--- Decode Step 13 (Input Token ID: 6909) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.126725
+Mean Absolute Error : 0.023681
+Cosine Similarity   : 0.99998474
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 1250
+C++ Argmax Token    : 1250
+
+--- Decode Step 14 (Input Token ID: 1250) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.114882
+Mean Absolute Error : 0.020679
+Cosine Similarity   : 0.99998677
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 964
+C++ Argmax Token    : 964
+
+--- Decode Step 15 (Input Token ID: 964) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.184055
+Mean Absolute Error : 0.032971
+Cosine Similarity   : 0.99996662
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 596
+C++ Argmax Token    : 596
+
+--- Decode Step 16 (Input Token ID: 596) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.148866
+Mean Absolute Error : 0.030201
+Cosine Similarity   : 0.99998331
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 3633
+C++ Argmax Token    : 3633
+
+--- Decode Step 17 (Input Token ID: 3633) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.132505
+Mean Absolute Error : 0.020680
+Cosine Similarity   : 0.99998784
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 18 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.142976
+Mean Absolute Error : 0.027212
+Cosine Similarity   : 0.99998212
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 19 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.181970
+Mean Absolute Error : 0.029054
+Cosine Similarity   : 0.99995375
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 20 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.125930
+Mean Absolute Error : 0.022447
+Cosine Similarity   : 0.99996603
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29906
+C++ Argmax Token    : 29906
+
+--- Decode Step 21 (Input Token ID: 29906) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.164913
+Mean Absolute Error : 0.030573
+Cosine Similarity   : 0.99996948
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 22 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.110867
+Mean Absolute Error : 0.020190
+Cosine Similarity   : 0.99998498
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 887
+C++ Argmax Token    : 887
+
+--- Decode Step 23 (Input Token ID: 887) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.134310
+Mean Absolute Error : 0.026389
+Cosine Similarity   : 0.99998796
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 1246
+C++ Argmax Token    : 1246
+
+--- Decode Step 24 (Input Token ID: 1246) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.131752
+Mean Absolute Error : 0.022837
+Cosine Similarity   : 0.99998629
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 25 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.144054
+Mean Absolute Error : 0.027726
+Cosine Similarity   : 0.99998510
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 10974
+C++ Argmax Token    : 10974
+
+--- Decode Step 26 (Input Token ID: 10974) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.128096
+Mean Absolute Error : 0.024894
+Cosine Similarity   : 0.99998641
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 322
+C++ Argmax Token    : 322
+
+--- Decode Step 27 (Input Token ID: 322) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.136953
+Mean Absolute Error : 0.025625
+Cosine Similarity   : 0.99998325
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 3461
+C++ Argmax Token    : 3461
+
+--- Decode Step 28 (Input Token ID: 3461) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.136851
+Mean Absolute Error : 0.026558
+Cosine Similarity   : 0.99998152
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 29 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.123007
+Mean Absolute Error : 0.021149
+Cosine Similarity   : 0.99998695
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 30 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.132736
+Mean Absolute Error : 0.023819
+Cosine Similarity   : 0.99998021
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 615
+C++ Argmax Token    : 615
+
+--- Decode Step 31 (Input Token ID: 615) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.148432
+Mean Absolute Error : 0.023470
+Cosine Similarity   : 0.99998540
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 32 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.126925
+Mean Absolute Error : 0.021298
+Cosine Similarity   : 0.99998397
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 33 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.195895
+Mean Absolute Error : 0.030876
+Cosine Similarity   : 0.99992043
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 34 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.148195
+Mean Absolute Error : 0.025112
+Cosine Similarity   : 0.99995315
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29941
+C++ Argmax Token    : 29941
+
+--- Decode Step 35 (Input Token ID: 29941) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.170837
+Mean Absolute Error : 0.028070
+Cosine Similarity   : 0.99997216
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 36 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.175740
+Mean Absolute Error : 0.034688
+Cosine Similarity   : 0.99996865
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 887
+C++ Argmax Token    : 887
+
+--- Decode Step 37 (Input Token ID: 887) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.110418
+Mean Absolute Error : 0.019037
+Cosine Similarity   : 0.99998981
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 748
+C++ Argmax Token    : 748
+
+--- Decode Step 38 (Input Token ID: 748) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.148728
+Mean Absolute Error : 0.020545
+Cosine Similarity   : 0.99998558
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 304
+C++ Argmax Token    : 304
+
+--- Decode Step 39 (Input Token ID: 304) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.105848
+Mean Absolute Error : 0.020652
+Cosine Similarity   : 0.99998784
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 40 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.174705
+Mean Absolute Error : 0.024852
+Cosine Similarity   : 0.99998420
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 9124
+C++ Argmax Token    : 9124
+
+--- Decode Step 41 (Input Token ID: 9124) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.131631
+Mean Absolute Error : 0.025089
+Cosine Similarity   : 0.99998546
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 322
+C++ Argmax Token    : 322
+
+--- Decode Step 42 (Input Token ID: 322) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.114434
+Mean Absolute Error : 0.019692
+Cosine Similarity   : 0.99998891
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 19754
+C++ Argmax Token    : 19754
+
+--- Decode Step 43 (Input Token ID: 19754) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.155365
+Mean Absolute Error : 0.029396
+Cosine Similarity   : 0.99995923
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 277
+C++ Argmax Token    : 277
+
+--- Decode Step 44 (Input Token ID: 277) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.135017
+Mean Absolute Error : 0.022114
+Cosine Similarity   : 0.99998611
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 45 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.138143
+Mean Absolute Error : 0.021674
+Cosine Similarity   : 0.99998796
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 6909
+C++ Argmax Token    : 6909
+
+--- Decode Step 46 (Input Token ID: 6909) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.123640
+Mean Absolute Error : 0.021596
+Cosine Similarity   : 0.99998748
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 1250
+C++ Argmax Token    : 1250
+
+--- Decode Step 47 (Input Token ID: 1250) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.134488
+Mean Absolute Error : 0.024216
+Cosine Similarity   : 0.99998331
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 964
+C++ Argmax Token    : 964
+
+--- Decode Step 48 (Input Token ID: 964) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.134471
+Mean Absolute Error : 0.030147
+Cosine Similarity   : 0.99998188
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 596
+C++ Argmax Token    : 596
+
+--- Decode Step 49 (Input Token ID: 596) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.152693
+Mean Absolute Error : 0.023982
+Cosine Similarity   : 0.99998546
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 3633
+C++ Argmax Token    : 3633
+
+--- Decode Step 50 (Input Token ID: 3633) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.129240
+Mean Absolute Error : 0.025061
+Cosine Similarity   : 0.99998516
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 51 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.130630
+Mean Absolute Error : 0.025593
+Cosine Similarity   : 0.99997681
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 52 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.143972
+Mean Absolute Error : 0.025289
+Cosine Similarity   : 0.99995202
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 53 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.137717
+Mean Absolute Error : 0.024230
+Cosine Similarity   : 0.99995935
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29946
+C++ Argmax Token    : 29946
+
+--- Decode Step 54 (Input Token ID: 29946) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.168955
+Mean Absolute Error : 0.027202
+Cosine Similarity   : 0.99997520
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 55 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.118734
+Mean Absolute Error : 0.020546
+Cosine Similarity   : 0.99998343
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 887
+C++ Argmax Token    : 887
+
+--- Decode Step 56 (Input Token ID: 887) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.106071
+Mean Absolute Error : 0.019674
+Cosine Similarity   : 0.99998927
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 1246
+C++ Argmax Token    : 1246
+
+--- Decode Step 57 (Input Token ID: 1246) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.167459
+Mean Absolute Error : 0.025403
+Cosine Similarity   : 0.99998522
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 58 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.136271
+Mean Absolute Error : 0.022313
+Cosine Similarity   : 0.99998665
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 10974
+C++ Argmax Token    : 10974
+
+--- Decode Step 59 (Input Token ID: 10974) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.165029
+Mean Absolute Error : 0.027168
+Cosine Similarity   : 0.99998045
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 322
+C++ Argmax Token    : 322
+
+--- Decode Step 60 (Input Token ID: 322) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.135192
+Mean Absolute Error : 0.025201
+Cosine Similarity   : 0.99998224
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 3461
+C++ Argmax Token    : 3461
+
+--- Decode Step 61 (Input Token ID: 3461) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.150431
+Mean Absolute Error : 0.025901
+Cosine Similarity   : 0.99997687
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 62 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.134626
+Mean Absolute Error : 0.023682
+Cosine Similarity   : 0.99998379
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 63 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.178650
+Mean Absolute Error : 0.028884
+Cosine Similarity   : 0.99996746
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 615
+C++ Argmax Token    : 615
+
+--- Decode Step 64 (Input Token ID: 615) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.216808
+Mean Absolute Error : 0.040569
+Cosine Similarity   : 0.99996889
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 65 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.178938
+Mean Absolute Error : 0.031062
+Cosine Similarity   : 0.99996263
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 66 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.153300
+Mean Absolute Error : 0.029310
+Cosine Similarity   : 0.99993825
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 67 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.169295
+Mean Absolute Error : 0.023120
+Cosine Similarity   : 0.99996066
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29945
+C++ Argmax Token    : 29945
+
+--- Decode Step 68 (Input Token ID: 29945) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.171838
+Mean Absolute Error : 0.029838
+Cosine Similarity   : 0.99997473
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 69 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.128367
+Mean Absolute Error : 0.026238
+Cosine Similarity   : 0.99997461
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 887
+C++ Argmax Token    : 887
+
+--- Decode Step 70 (Input Token ID: 887) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.110745
+Mean Absolute Error : 0.021296
+Cosine Similarity   : 0.99998760
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 748
+C++ Argmax Token    : 748
+
+--- Decode Step 71 (Input Token ID: 748) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.150476
+Mean Absolute Error : 0.021659
+Cosine Similarity   : 0.99998331
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 304
+C++ Argmax Token    : 304
+
+--- Decode Step 72 (Input Token ID: 304) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.128876
+Mean Absolute Error : 0.023845
+Cosine Similarity   : 0.99998432
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 73 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.121538
+Mean Absolute Error : 0.023937
+Cosine Similarity   : 0.99998820
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 9124
+C++ Argmax Token    : 9124
+
+--- Decode Step 74 (Input Token ID: 9124) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.133188
+Mean Absolute Error : 0.021596
+Cosine Similarity   : 0.99998653
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 322
+C++ Argmax Token    : 322
+
+--- Decode Step 75 (Input Token ID: 322) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.121014
+Mean Absolute Error : 0.024141
+Cosine Similarity   : 0.99998879
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 19754
+C++ Argmax Token    : 19754
+
+--- Decode Step 76 (Input Token ID: 19754) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.226688
+Mean Absolute Error : 0.031493
+Cosine Similarity   : 0.99996126
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 277
+C++ Argmax Token    : 277
+
+--- Decode Step 77 (Input Token ID: 277) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.114128
+Mean Absolute Error : 0.023040
+Cosine Similarity   : 0.99998307
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 78 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.156296
+Mean Absolute Error : 0.028739
+Cosine Similarity   : 0.99998015
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 6909
+C++ Argmax Token    : 6909
+
+--- Decode Step 79 (Input Token ID: 6909) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.137888
+Mean Absolute Error : 0.024497
+Cosine Similarity   : 0.99998647
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 1250
+C++ Argmax Token    : 1250
+
+--- Decode Step 80 (Input Token ID: 1250) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.180928
+Mean Absolute Error : 0.028732
+Cosine Similarity   : 0.99998075
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 964
+C++ Argmax Token    : 964
+
+--- Decode Step 81 (Input Token ID: 964) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.159668
+Mean Absolute Error : 0.026118
+Cosine Similarity   : 0.99998188
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 596
+C++ Argmax Token    : 596
+
+--- Decode Step 82 (Input Token ID: 596) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.156169
+Mean Absolute Error : 0.029148
+Cosine Similarity   : 0.99998462
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 3633
+C++ Argmax Token    : 3633
+
+--- Decode Step 83 (Input Token ID: 3633) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.137120
+Mean Absolute Error : 0.028662
+Cosine Similarity   : 0.99997991
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 84 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.141050
+Mean Absolute Error : 0.025598
+Cosine Similarity   : 0.99997437
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 85 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.148582
+Mean Absolute Error : 0.024521
+Cosine Similarity   : 0.99995369
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 86 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.159890
+Mean Absolute Error : 0.024519
+Cosine Similarity   : 0.99995297
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29953
+C++ Argmax Token    : 29953
+
+--- Decode Step 87 (Input Token ID: 29953) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.167719
+Mean Absolute Error : 0.029763
+Cosine Similarity   : 0.99997091
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 88 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.153261
+Mean Absolute Error : 0.019679
+Cosine Similarity   : 0.99998426
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 887
+C++ Argmax Token    : 887
+
+--- Decode Step 89 (Input Token ID: 887) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.124384
+Mean Absolute Error : 0.023148
+Cosine Similarity   : 0.99998742
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 1246
+C++ Argmax Token    : 1246
+
+--- Decode Step 90 (Input Token ID: 1246) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.140209
+Mean Absolute Error : 0.022093
+Cosine Similarity   : 0.99998593
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 91 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.190382
+Mean Absolute Error : 0.029965
+Cosine Similarity   : 0.99998105
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 10974
+C++ Argmax Token    : 10974
+
+--- Decode Step 92 (Input Token ID: 10974) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.161919
+Mean Absolute Error : 0.033065
+Cosine Similarity   : 0.99997759
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 322
+C++ Argmax Token    : 322
+
+--- Decode Step 93 (Input Token ID: 322) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.163524
+Mean Absolute Error : 0.026407
+Cosine Similarity   : 0.99998242
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 3461
+C++ Argmax Token    : 3461
+
+--- Decode Step 94 (Input Token ID: 3461) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.145277
+Mean Absolute Error : 0.025268
+Cosine Similarity   : 0.99998045
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 95 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.139150
+Mean Absolute Error : 0.024052
+Cosine Similarity   : 0.99998546
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 278
+C++ Argmax Token    : 278
+
+--- Decode Step 96 (Input Token ID: 278) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.362614
+Mean Absolute Error : 0.044686
+Cosine Similarity   : 0.99993420
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 615
+C++ Argmax Token    : 615
+
+--- Decode Step 97 (Input Token ID: 615) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.162980
+Mean Absolute Error : 0.027717
+Cosine Similarity   : 0.99997616
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 29889
+C++ Argmax Token    : 29889
+
+--- Decode Step 98 (Input Token ID: 29889) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.151867
+Mean Absolute Error : 0.029910
+Cosine Similarity   : 0.99996638
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+--- Decode Step 99 (Input Token ID: 13) ---
+Shape               : [1, 32000]
+Max Absolute Error  : 0.211869
+Mean Absolute Error : 0.032225
+Cosine Similarity   : 0.99991941
+Argmax Match Rate   : 100.00%
+PyTorch Argmax Token: 13
+C++ Argmax Token    : 13
+
+================================
+Decode Argmax Summary
+================================
+Argmax Match Rate : 100.00% (100/100)
+
+================================
+PyTorch verification completed.
+================================
+
+================================
+Starting PyTorch generation verification.
+================================
+Prompt: You discover a bank where people can deposit and withdraw time instead of money. You have 37 years in your account, but someone has just withdrawn 6 minutes from your childhood. What do you do?
+C++ generated tokens: 100
+Device: cuda
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 9743.60it/s]
+Prompt length: 47 tokens
+
+Running PyTorch autoregressive generation...
+
+================================
+Generation Verification
+================================
+C++ token count     : 100
+PyTorch token count : 100
+
+Token comparison:
+Step   0: C++ =     13, PyTorch =     13 [MATCH]
+Step   1: C++ =     13, PyTorch =     13 [MATCH]
+Step   2: C++ =  29896, PyTorch =  29896 [MATCH]
+Step   3: C++ =  29889, PyTorch =  29889 [MATCH]
+Step   4: C++ =    887, PyTorch =    887 [MATCH]
+Step   5: C++ =    748, PyTorch =    748 [MATCH]
+Step   6: C++ =    304, PyTorch =    304 [MATCH]
+Step   7: C++ =    278, PyTorch =    278 [MATCH]
+Step   8: C++ =   9124, PyTorch =   9124 [MATCH]
+Step   9: C++ =    322, PyTorch =    322 [MATCH]
+Step  10: C++ =  19754, PyTorch =  19754 [MATCH]
+Step  11: C++ =    277, PyTorch =    277 [MATCH]
+Step  12: C++ =    278, PyTorch =    278 [MATCH]
+Step  13: C++ =   6909, PyTorch =   6909 [MATCH]
+Step  14: C++ =   1250, PyTorch =   1250 [MATCH]
+Step  15: C++ =    964, PyTorch =    964 [MATCH]
+Step  16: C++ =    596, PyTorch =    596 [MATCH]
+Step  17: C++ =   3633, PyTorch =   3633 [MATCH]
+Step  18: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  19: C++ =     13, PyTorch =     13 [MATCH]
+Step  20: C++ =     13, PyTorch =     13 [MATCH]
+Step  21: C++ =  29906, PyTorch =  29906 [MATCH]
+Step  22: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  23: C++ =    887, PyTorch =    887 [MATCH]
+Step  24: C++ =   1246, PyTorch =   1246 [MATCH]
+Step  25: C++ =    278, PyTorch =    278 [MATCH]
+Step  26: C++ =  10974, PyTorch =  10974 [MATCH]
+Step  27: C++ =    322, PyTorch =    322 [MATCH]
+Step  28: C++ =   3461, PyTorch =   3461 [MATCH]
+Step  29: C++ =    278, PyTorch =    278 [MATCH]
+Step  30: C++ =    278, PyTorch =    278 [MATCH]
+Step  31: C++ =    615, PyTorch =    615 [MATCH]
+Step  32: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  33: C++ =     13, PyTorch =     13 [MATCH]
+Step  34: C++ =     13, PyTorch =     13 [MATCH]
+Step  35: C++ =  29941, PyTorch =  29941 [MATCH]
+Step  36: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  37: C++ =    887, PyTorch =    887 [MATCH]
+Step  38: C++ =    748, PyTorch =    748 [MATCH]
+Step  39: C++ =    304, PyTorch =    304 [MATCH]
+Step  40: C++ =    278, PyTorch =    278 [MATCH]
+Step  41: C++ =   9124, PyTorch =   9124 [MATCH]
+Step  42: C++ =    322, PyTorch =    322 [MATCH]
+Step  43: C++ =  19754, PyTorch =  19754 [MATCH]
+Step  44: C++ =    277, PyTorch =    277 [MATCH]
+Step  45: C++ =    278, PyTorch =    278 [MATCH]
+Step  46: C++ =   6909, PyTorch =   6909 [MATCH]
+Step  47: C++ =   1250, PyTorch =   1250 [MATCH]
+Step  48: C++ =    964, PyTorch =    964 [MATCH]
+Step  49: C++ =    596, PyTorch =    596 [MATCH]
+Step  50: C++ =   3633, PyTorch =   3633 [MATCH]
+Step  51: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  52: C++ =     13, PyTorch =     13 [MATCH]
+Step  53: C++ =     13, PyTorch =     13 [MATCH]
+Step  54: C++ =  29946, PyTorch =  29946 [MATCH]
+Step  55: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  56: C++ =    887, PyTorch =    887 [MATCH]
+Step  57: C++ =   1246, PyTorch =   1246 [MATCH]
+Step  58: C++ =    278, PyTorch =    278 [MATCH]
+Step  59: C++ =  10974, PyTorch =  10974 [MATCH]
+Step  60: C++ =    322, PyTorch =    322 [MATCH]
+Step  61: C++ =   3461, PyTorch =   3461 [MATCH]
+Step  62: C++ =    278, PyTorch =    278 [MATCH]
+Step  63: C++ =    278, PyTorch =    278 [MATCH]
+Step  64: C++ =    615, PyTorch =    615 [MATCH]
+Step  65: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  66: C++ =     13, PyTorch =     13 [MATCH]
+Step  67: C++ =     13, PyTorch =     13 [MATCH]
+Step  68: C++ =  29945, PyTorch =  29945 [MATCH]
+Step  69: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  70: C++ =    887, PyTorch =    887 [MATCH]
+Step  71: C++ =    748, PyTorch =    748 [MATCH]
+Step  72: C++ =    304, PyTorch =    304 [MATCH]
+Step  73: C++ =    278, PyTorch =    278 [MATCH]
+Step  74: C++ =   9124, PyTorch =   9124 [MATCH]
+Step  75: C++ =    322, PyTorch =    322 [MATCH]
+Step  76: C++ =  19754, PyTorch =  19754 [MATCH]
+Step  77: C++ =    277, PyTorch =    277 [MATCH]
+Step  78: C++ =    278, PyTorch =    278 [MATCH]
+Step  79: C++ =   6909, PyTorch =   6909 [MATCH]
+Step  80: C++ =   1250, PyTorch =   1250 [MATCH]
+Step  81: C++ =    964, PyTorch =    964 [MATCH]
+Step  82: C++ =    596, PyTorch =    596 [MATCH]
+Step  83: C++ =   3633, PyTorch =   3633 [MATCH]
+Step  84: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  85: C++ =     13, PyTorch =     13 [MATCH]
+Step  86: C++ =     13, PyTorch =     13 [MATCH]
+Step  87: C++ =  29953, PyTorch =  29953 [MATCH]
+Step  88: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  89: C++ =    887, PyTorch =    887 [MATCH]
+Step  90: C++ =   1246, PyTorch =   1246 [MATCH]
+Step  91: C++ =    278, PyTorch =    278 [MATCH]
+Step  92: C++ =  10974, PyTorch =  10974 [MATCH]
+Step  93: C++ =    322, PyTorch =    322 [MATCH]
+Step  94: C++ =   3461, PyTorch =   3461 [MATCH]
+Step  95: C++ =    278, PyTorch =    278 [MATCH]
+Step  96: C++ =    278, PyTorch =    278 [MATCH]
+Step  97: C++ =    615, PyTorch =    615 [MATCH]
+Step  98: C++ =  29889, PyTorch =  29889 [MATCH]
+Step  99: C++ =     13, PyTorch =     13 [MATCH]
+
+--------------------------------
+Token Match Rate: 100/100 (100.00%)
+
+Result: PASS
+
+================================
+PyTorch generation verification passed.
+================================
