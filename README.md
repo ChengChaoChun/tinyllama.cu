@@ -131,17 +131,41 @@ Imagine you are an engineer living on a Mars colony in the year 2147. One night,
 ## Validation
 The inference results are verified against PyTorch for numerical correctness and autoregressive generation.
 
-### Logit Verification
-* Prompt prefill + 100 decoding steps
-* Argmax match: **100/100 (100%)**
-* Cosine similarity: **> 0.9995**
+### Standard Prompt
+**Prompt**
+```text
+You discover a bank where people can deposit and withdraw time instead of money. You have 37 years in your account, but someone has just withdrawn 6 minutes from your childhood. What do you do?
+```
 
-### Generation Verification
-* Generated tokens: **100**
-* Token match: **100/100 (100%)**
-* Result: **PASS**
+**Logit Verification**
+- Prompt prefill + 100 decoding steps
+- Argmax match: **100/100 (100%)**
+- Cosine similarity: **> 0.999**
 
-[View the full verification log](test/verification.log)  
+**Generation Verification**
+- Generated tokens: **100**
+- Token match: **100/100 (100%)**
+
+[View the full verification log](test/verify.log)
+
+### Chat Template
+The same prompt is tested using the TinyLlama chat template with the following messages:
+```text
+System: You are a helpful assistant.
+
+User: You discover a bank where people can deposit and withdraw time instead of money. You have 37 years in your account, but someone has just withdrawn 6 minutes from your childhood. What do you do?
+```
+
+**Logit Verification**
+- Prompt prefill + 100 decoding steps
+- Argmax match: **97/100 (97%)**
+- Cosine similarity: **> 0.999**
+
+**Generation Verification**
+- Generated tokens: **100**
+- Token match: **76/100 (76%)**
+
+[View the full chat-template verification log](test/chat_template/chat_verify.log)
 
 ## License
 This project is licensed under the MIT License.
